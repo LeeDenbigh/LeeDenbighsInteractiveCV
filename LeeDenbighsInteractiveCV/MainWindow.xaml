@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeeDenbighsInteractiveCV"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1024" Background="{StaticResource WindowBackground}">
+        Title="MainWindow" Height="832" Width="1280" Background="{StaticResource WindowBackground}"
+        WindowStartupLocation="CenterScreen">
+    <!--Base Grid-->
     <Grid>
+        <!--Base Columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="87"/>
+            <ColumnDefinition Width="230" />
+            <ColumnDefinition Width="635"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
         
+        <!--Base Rows-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="323" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <!--Page Content-->
+        <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                Background="{StaticResource PageContentBackground}"
+                CornerRadius="10  0 0 0">
+            
+        </Border>
     </Grid>
 </Window>
