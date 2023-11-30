@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Window Background-->
+    <LinearGradientBrush x:Key="WindowBackground" EndPoint="0,1" StartPoint="1,0">
+        <GradientStop Color="#FF141414" Offset="1"/>
+        <GradientStop Color="#FF16121B" Offset="0"/>
+    </LinearGradientBrush>
+    <!--Page Content Background-->
+    <SolidColorBrush x:Key="PageContentBackground" Color="#FF1A171D" />
+    <!--Module Background-->
+    <SolidColorBrush x:Key="ModuleBackground" Color="#FF231F27" />
+    <!--Light Text-->
+    <SolidColorBrush x:Key="DefaultText" Color="#FFD2D2D2" />
+    <SolidColorBrush x:Key="WhiteText" Color="#FFFFFFFF" />
+    <!--Accent Colour-->
+    <SolidColorBrush x:Key="AccentRegular" Color="#FFFF007A" />
+    <SolidColorBrush x:Key="AccentDark" Color="#FF3F1E32" />
+    <!--Software Accent-->
+    <SolidColorBrush x:Key="SoftwareAccent" Color="#FFE89416" />
+    <!--Game Design Accent-->
+    <SolidColorBrush x:Key="GameDesignAccent" Color="#FF8A38CB" />
+    <!--Web Accent-->
+    <SolidColorBrush x:Key="WebAccent" Color="#FFAECB38" />
+    <!--Design Accent-->
+    <SolidColorBrush x:Key="DesignAccent" Color="#FF3896CB" />
+    <!--Normal Button-->
+    <SolidColorBrush x:Key="ButtonBackgroundRegular" Color="#FF353239" />
+    
+</ResourceDictionary>

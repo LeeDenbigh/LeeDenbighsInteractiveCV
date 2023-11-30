@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionaries/Colours.xaml"/>
+                <ResourceDictionary Source="Dictionaries/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
