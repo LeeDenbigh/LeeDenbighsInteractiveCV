@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="LeeDenbighsInteractiveCV.Views.VisualSkillsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
+             mc:Ignorable="d" >
+    <ItemsControl ItemsSource="{Binding Skills}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Border Background="{Binding ColorHex}" Height="20"
+                        Width="{Binding Level, Converter={StaticResource WidthConverter}}">
+                    <TextBlock Text="{Binding Name}" Foreground="{StaticResource WhiteText}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>
