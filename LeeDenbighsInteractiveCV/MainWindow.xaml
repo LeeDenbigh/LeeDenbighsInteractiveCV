@@ -31,5 +31,43 @@
                 CornerRadius="10  0 0 0">
             
         </Border>
+        
+        <!--Sidebar Buttons-->
+        <StackPanel Grid.Row="1" Grid.RowSpan="2">
+            <!--Home Panel-->
+            <Button Style="{StaticResource NoHoverButton}">
+                <Viewbox Style="{StaticResource ViewBoxIcon}"  >
+                    <Path Style="{StaticResource PathStyle}" Data="{StaticResource HomeIconPath}"/>
+                </Viewbox>
+            </Button>
+            <!--Experience Panel-->
+            <Button Style="{StaticResource NoHoverButton}">
+                <Viewbox Style="{StaticResource ViewBoxIcon}"  >
+                    <Path Style="{StaticResource PathStyle}" Data="{StaticResource ExperienceIconPath}"/>
+                </Viewbox>
+            </Button>
+            <!--Education Panel-->
+            <Button Style="{StaticResource NoHoverButton}">
+                <Viewbox Style="{StaticResource ViewBoxIcon}"  >
+                    <Path Style="{StaticResource PathStyle}" Data="{StaticResource EducationIconData}"/>
+                </Viewbox>
+            </Button>
+            <!--Portfolio Panel-->
+            <Button Style="{StaticResource NoHoverButton}">
+                <Viewbox Style="{StaticResource ViewBoxIcon}"  >
+                    <Path Style="{StaticResource PathStyle}" Data="{StaticResource PortfolioIconData}"/>
+                </Viewbox>
+            </Button>
+            <!--Info Panel-->
+            <Button Style="{StaticResource NoHoverButton}">
+                <Viewbox Style="{StaticResource ViewBoxIcon}"  >
+                    <Path Style="{StaticResource PathStyle}" 
+                      Data="{StaticResource InfoIconData}"/>
+                </Viewbox>
+            </Button>
+        </StackPanel>
+        
+        <!--Window Title-->
+        
     </Grid>
 </Window>

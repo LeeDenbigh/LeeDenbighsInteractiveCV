@@ -1,4 +1,50 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Menu Button-->
+    <Style x:Key="NoHoverButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0 0 0 20" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <!-- Set to the same background as the normal state to remove hover effect -->
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <!-- Optional: Change background for pressed state -->
+                            <Setter Property="Background" Value="DarkGray"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     
+    <!--Path (Menu Icons)-->
+    <Style x:Key="PathStyle" TargetType="Path">
+        <!--The default icon fill colour-->
+        <Setter Property="Fill" Value="{StaticResource AccentDark}" />
+        <Style.Triggers>
+            <!--Is the cursor over the button-->
+            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                <!--If the cursor is over the button, change the fill colour to the accent colour-->
+                <Setter Property="Fill" Value="{StaticResource AccentRegular}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--ViewBox Style for the icons/buttons-->
+    <Style x:Key="ViewBoxIcon" TargetType="Viewbox">
+        <Setter Property="Width" Value="23" />
+        <Setter Property="Height" Value="23" />
+    </Style>
 </ResourceDictionary>

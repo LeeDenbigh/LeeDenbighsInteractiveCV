@@ -14,7 +14,7 @@
     <SolidColorBrush x:Key="WhiteText" Color="#FFFFFFFF" />
     <!--Accent Colour-->
     <SolidColorBrush x:Key="AccentRegular" Color="#FFFF007A" />
-    <SolidColorBrush x:Key="AccentDark" Color="#FF3F1E32" />
+    <SolidColorBrush x:Key="AccentDark" Color="#FF7B2559" />
     <!--Software Accent-->
     <SolidColorBrush x:Key="SoftwareAccent" Color="#FFE89416" />
     <!--Game Design Accent-->
