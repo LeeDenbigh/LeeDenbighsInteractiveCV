@@ -2,7 +2,6 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV"
-             xmlns:converters="clr-namespace:LeeDenbighsInteractiveCV.Services"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -13,7 +12,6 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Add WidthConverter here -->
-            <converters:WidthConverter x:Key="WidthConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

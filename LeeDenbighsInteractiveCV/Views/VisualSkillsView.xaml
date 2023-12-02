@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
-             mc:Ignorable="d" >
-    <ItemsControl ItemsSource="{Binding Skills}">
+             mc:Ignorable="d">
+
+    <ItemsControl x:Name="SkillsItemsControl" ItemsSource="{Binding Skills}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <Border Background="{Binding ColorHex}" Height="20"
-                        Width="{Binding Level, Converter={StaticResource WidthConverter}}">
+                <Border Background="{Binding ColorHex}" Height="20">
                     <TextBlock Text="{Binding Name}" Foreground="{StaticResource WhiteText}" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </Border>
             </DataTemplate>
@@ -20,4 +20,5 @@
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
     </ItemsControl>
+
 </UserControl>
