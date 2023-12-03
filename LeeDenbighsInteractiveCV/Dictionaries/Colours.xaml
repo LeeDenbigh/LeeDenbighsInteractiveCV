@@ -25,9 +25,7 @@
     <!--Design Accent-->
     <SolidColorBrush x:Key="DesignAccent" Color="#FF3896CB" />
     <!--Normal Button-->
-    <SolidColorBrush x:Key="ButtonBackgroundPress" Color="#FF353239" />
-    <SolidColorBrush x:Key="ButtonBackgroundOver" Color="#FF312A3A" />
-    <SolidColorBrush x:Key="ButtonBackgroundRegular" Color="#FF402F56" />
+    <SolidColorBrush x:Key="ButtonBackgroundRegular" Color="#FF353239" />
     <!--Seperator-->
     <SolidColorBrush x:Key="Seperator" Color="#FF313131" />
 
