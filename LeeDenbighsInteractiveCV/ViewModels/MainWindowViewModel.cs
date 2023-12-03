@@ -12,6 +12,8 @@ namespace LeeDenbighsInteractiveCV.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+
         private string _fileContent;
         public string FileContent
         {
@@ -33,5 +35,13 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             FileService fileService = new FileService();
             FileContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
         }
+    }
+
+    public enum ActivePage
+    {
+        Overview,
+        Experience,
+        Education,
+        Portfolio,
     }
 }
