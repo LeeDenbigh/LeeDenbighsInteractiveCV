@@ -36,8 +36,56 @@ namespace LeeDenbighsInteractiveCV.Views
             // For example, if your SkillViewModel has a property called 'Skills', and your XAML has a
             // ListBox with its ItemsSource property bound to 'Skills', the ListBox will display data
             // from the SkillViewModel's 'Skills' property.
-            this.DataContext = new SkillViewModel();
+            this.DataContext = new SkillsViewModel();
         }
 
+        private void canvas_Loaded(object sender, RoutedEventArgs e)
+        {
+            stackPanel.Children.Clear();
+
+            DrawSkills();
+        }
+
+        private void DrawSkills()
+        {
+            double currentX = 0;
+            foreach (var skill in ((SkillsViewModel)DataContext).Skills)
+            {
+                var rect = new Rectangle
+                {
+                    Width = 500 * 25 / 100,
+                    Height = stackPanel.Height,
+                    Fill = (SolidColorBrush)(new BrushConverter().ConvertFrom(skill.ColorHex))
+                };
+
+                Canvas.SetLeft(rect, currentX);
+                stackPanel.Children.Add(rect);
+
+                AnimateSkills(rect, 500 * skill.Percentage / 100);
+
+                currentX += rect.Width;
+            }
+        }
+
+        private void AnimateSkills(Rectangle rect, double toWidth)
+        {
+            var aninimation = new DoubleAnimation
+            {
+                From = rect.Width,
+                To = toWidth,
+                Duration = TimeSpan.FromSeconds(3),
+                FillBehavior = FillBehavior.Stop
+            };
+
+            aninimation.EasingFunction = new QuadraticEase
+            {
+                EasingMode = EasingMode.EaseOut,
+            };
+
+            aninimation.Completed += (s, e) => rect.Width = toWidth;
+
+            rect.BeginAnimation(WidthProperty, aninimation);
+
+        }
     }
 }

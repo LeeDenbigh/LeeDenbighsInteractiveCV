@@ -1,0 +1,70 @@
+[
+  {
+    "Name": "C#",
+    "Level": 75
+  },
+  {
+    "Name": "Python",
+    "Level": 25
+  },
+  {
+    "Name": "HTML",
+    "Level": 70
+  },
+  {
+    "Name": "CSS",
+    "Level": 70
+  },
+  {
+    "Name": "Unity",
+    "Level": 75
+  },
+  {
+    "Name": "Js",
+    "Level": 45
+  },
+  {
+    "Name": "WPF",
+    "Level": 80
+  },
+  {
+    "Name": "UWP",
+    "Level": 80
+  },
+  {
+    "Name": "C++",
+    "Level": 10
+  },
+  {
+    "Name": "Googling",
+    "Level": 100
+  },
+  {
+    "Name": "Photoshop",
+    "Level": 70
+  },
+  {
+    "Name": "Illustrator",
+    "Level": 60
+  },
+  {
+    "Name": "Affinty Design",
+    "Level": 95
+  },
+  {
+    "Name": "Affinty Photo",
+    "Level": 90
+  },
+  {
+    "Name": "Figma",
+    "Level": 95
+  },
+  {
+    "Name": "GitHub",
+    "Level": 70
+  },
+  {
+    "Name": "Stack Overflow",
+    "Level": 100
+  }
+]

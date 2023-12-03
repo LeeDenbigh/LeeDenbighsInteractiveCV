@@ -6,7 +6,11 @@
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
              mc:Ignorable="d">
 
-    <ItemsControl x:Name="SkillsItemsControl" ItemsSource="{Binding Skills}">
+    <StackPanel Orientation="Horizontal" Name="stackPanel" Loaded="canvas_Loaded" Height="10">
+        
+    </StackPanel>
+
+    <!--<ItemsControl x:Name="SkillsItemsControl" ItemsSource="{Binding Skills}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
                 <Border Background="{Binding ColorHex}" Height="20">
@@ -19,6 +23,6 @@
                 <StackPanel Orientation="Horizontal"/>
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
-    </ItemsControl>
+    </ItemsControl>-->
 
 </UserControl>

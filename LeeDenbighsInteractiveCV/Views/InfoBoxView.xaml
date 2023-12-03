@@ -9,37 +9,32 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="500"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="136"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="111"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <!--Info Box-->
-        <!--<Border Style="{StaticResource Box}" Grid.Column="2" Grid.Row="1">
-            <local:VisualSkillsView />
+        <!--<Border Style="{StaticResource Box}">
+            
         </Border>-->
-        <!--Info Title-->
-        <StackPanel Orientation="Horizontal" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center" 
-                    Margin="20,0">
-            <TextBlock Text="info" FontSize="20" Foreground="{StaticResource WhiteText}" />
-            <TextBlock Text="."    FontSize="20" Foreground="{StaticResource AccentRegular}" />
-        </StackPanel>
 
         <!--Picture-->
-        <Ellipse Grid.Row="1" Width="111" Height="111" >
+        <Ellipse Grid.Row="0" Grid.RowSpan="2" Width="111" Height="111" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Ellipse.Fill>
                 <ImageBrush ImageSource="pack://application:,,,/Assets/Images/me.jpg" />
             </Ellipse.Fill>
         </Ellipse>
 
+        <TextBlock Text="Skill Level" VerticalAlignment="Bottom" Grid.Row="1" FontSize="16" Foreground="{StaticResource WhiteText}" FontWeight="Bold"/>
+
         <!--My Information-->
-        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0">
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="top" HorizontalAlignment="Left" Margin="10 20">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="Margin" Value="0 0 0 10" />
@@ -62,35 +57,88 @@
         <local:VisualSkillsView Grid.Column="1" Grid.Row="2" Margin="10 0 0 0" />
         
         <!--Buttons-->
-        <StackPanel Orientation="Horizontal" 
-                    Grid.Row="3" 
-                    Grid.Column="1"
-                    VerticalAlignment="Top"
-                    Margin="20 20 0 0">
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
 
             <!--Contact button-->
-            <Button Padding="20 5" 
-                    Content="Contact Me" 
-                    Background="{StaticResource AccentRegular}" 
-                    Foreground="{StaticResource WhiteText}" 
-                    Height="34"
+            <Button Padding="20 5"
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource ButtonAccent}"
+                    Content="Contact Me"
                     Margin="0 0 20 0"/>
 
             <!--View PDF Version button-->
-            <Button Padding="20 5" 
-                    Content="View PDF Version" 
-                    Background="{StaticResource ButtonBackgroundRegular}" 
-                    Foreground="{StaticResource WhiteText}" 
-                    Height="34"
-                    Margin="0 0 20 0"/>
+            <Button Style="{StaticResource ButtonRegular}"
+                    Content="View PDF Version"
+                    Margin="0 0 20 0"
+                    HorizontalAlignment="Center"/>
 
             <!--GitHub button-->
-            <Button Padding="20 5" 
-                    Content="Goto My GitHub" 
-                    Background="{StaticResource ButtonBackgroundRegular}" 
-                    Foreground="{StaticResource WhiteText}" 
-                    Height="34"
-                    Margin="0 0 20 0"/>
+            <Button Style="{StaticResource ButtonRegular}" 
+                    Content="GitHub"
+                    HorizontalAlignment="Right"/>
         </StackPanel>
+        
+        <!--Skill Indicator-->
+        <Grid Grid.Column="0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!--Software-->
+            <TextBlock Text="Software 30%" Foreground="{StaticResource WhiteText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="12"
+                       Grid.Column="1"
+                       Margin="10 0"/>
+            <Rectangle Grid.Column="0" Fill="{StaticResource SoftwareAccent}" Width="16" Height="16"
+                       HorizontalAlignment="Right"/>
+            
+            <!--Design-->
+            <TextBlock Text="Design 20%" Foreground="{StaticResource WhiteText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="12"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Margin="10 0"/>
+            <Rectangle Fill="{StaticResource DesignAccent}" Width="16" Height="16"
+                       HorizontalAlignment="Right"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+
+            <!--Web-->
+            <TextBlock Text="Web 20%" Foreground="{StaticResource WhiteText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="12"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       Margin="10 0"/>
+            <Rectangle Fill="{StaticResource WebAccent}" Width="16" Height="16"
+                       HorizontalAlignment="Right"
+                       Grid.Row="2"
+                       Grid.Column="0"/>
+
+            <!--Game Design-->
+            <TextBlock Text="Game Design 30%" Foreground="{StaticResource WhiteText}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontSize="12"
+                       Grid.Row="3"
+                       Grid.Column="1"
+                       Margin="10 0"/>
+            <Rectangle Fill="{StaticResource GameDesignAccent}" Width="16" Height="16"
+                       HorizontalAlignment="Right"
+                       Grid.Row="3"
+                       Grid.Column="0"/>
+        </Grid>
     </Grid>
 </UserControl>

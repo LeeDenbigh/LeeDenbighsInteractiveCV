@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="LeeDenbighsInteractiveCV.Views.SkillListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        
+        <DataTemplate x:Key="SubjectSkillDataTemplate">
+            <Grid Height="30" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <!--Subject skill title-->
+                <TextBlock Text="{Binding Name}" FontSize="12" Margin="0 0 20 0" Foreground="{StaticResource WhiteText}" Grid.Column="0" VerticalAlignment="Center" />
+                <!--Subject skill amount-->
+                <ProgressBar Style="{StaticResource SubjectSkillsProgressBar}" Width="100" Minimum="0" Maximum="100" Value="0" Loaded="ProgressBar_Loaded" Grid.Column="1" VerticalAlignment="Center" >
+                    <ProgressBar.ToolTip>
+                        <Style TargetType="ToolTip">
+                            <Setter Property="Background" Value="{StaticResource WindowBackground}" />
+                            <Setter Property="Foreground" Value="{StaticResource WhiteText}" />
+                        </Style>
+                    </ProgressBar.ToolTip>
+                </ProgressBar>
+                <Rectangle Height="1" Fill="{StaticResource Seperator}" VerticalAlignment="Bottom" Grid.ColumnSpan="2" />
+                
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" FontWeight="Bold" Text="Subject Skill Level" Foreground="{StaticResource WhiteText}" VerticalAlignment="Top" />
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding Skills}" ItemTemplate="{StaticResource SubjectSkillDataTemplate}" />
+    </Grid>
+</UserControl>
