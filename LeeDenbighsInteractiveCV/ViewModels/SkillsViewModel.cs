@@ -13,16 +13,16 @@ namespace LeeDenbighsInteractiveCV.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<Skill> Skills { get; private set; }
+        public ObservableCollection<Skills> Skills { get; private set; }
 
         public SkillsViewModel()
         {
-            Skills = new ObservableCollection<Skill>
+            Skills = new ObservableCollection<Skills>
             {
-                new Skill { Name = "Software", Percentage = 30, ColorHex = "#E89416" },
-                new Skill { Name = "Design", Percentage = 20, ColorHex = "#3896CB" },
-                new Skill { Name = "Web", Percentage = 20, ColorHex = "#ADCB38" },
-                new Skill { Name = "Game Design", Percentage = 30, ColorHex = "#8A38CB" }
+                new Skills { Name = "Software", Percentage = 30, ColorHex = "#E89416" },
+                new Skills { Name = "Design", Percentage = 20, ColorHex = "#3896CB" },
+                new Skills { Name = "Web", Percentage = 20, ColorHex = "#ADCB38" },
+                new Skills { Name = "Game Design", Percentage = 30, ColorHex = "#8A38CB" }
             };
         }
     }

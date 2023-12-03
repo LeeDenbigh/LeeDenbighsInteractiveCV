@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeeDenbighsInteractiveCV.Models
 {
-    public class Skill
+    public class Skills
     {
         public string Name { get; set; }
         public double Percentage { get; set; }

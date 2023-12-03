@@ -74,8 +74,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\PersonalInfoModel.cs" />
+    <Compile Include="Models\Skills.cs" />
+    <Compile Include="Models\SubjectSkill.cs" />
+    <Compile Include="Services\FileService.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\SkillsViewModel.cs" />
+    <Compile Include="ViewModels\SubjectSkillViewModel.cs" />
     <Compile Include="Views\InfoBoxView.xaml.cs">
       <DependentUpon>InfoBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SkillListView.xaml.cs">
+      <DependentUpon>SkillListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VisualSkillsView.xaml.cs">
       <DependentUpon>VisualSkillsView.xaml</DependentUpon>
@@ -108,13 +117,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SkillListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\VisualSkillsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Skills.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -128,6 +140,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Assets\Images\me.jpg" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,8 +175,9 @@
     <Resource Include="Assets\Images\overview.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
+    <Content Include="Assets\Files\summary.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
