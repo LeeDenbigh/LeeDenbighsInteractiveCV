@@ -73,10 +73,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\PersonalInfoModel.cs" />
     <Compile Include="Models\Skills.cs" />
     <Compile Include="Models\SubjectSkill.cs" />
     <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\XmlFileService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\SubjectSkillViewModel.cs" />
@@ -153,6 +155,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="Assets\Files\ExperienceData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Files\experience_summary.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
