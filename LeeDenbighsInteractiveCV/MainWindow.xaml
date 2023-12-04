@@ -26,8 +26,16 @@
     </Window.Resources>
 
     <!--Base Grid-->
-    <TabControl Background="Transparent" BorderThickness="0" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
-        <TabItem Header="Overview">
+    <TabControl Background="Transparent" BorderThickness="0 1 0 0" BorderBrush="{StaticResource AccentRegular}" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                        <Path Data="{StaticResource HomeIconPath}" Fill="{DynamicResource WhiteText}" />
+                    </Viewbox>
+                    <TextBlock Text="Home" FontSize="16" Foreground="{DynamicResource WhiteText}" />
+                </StackPanel>
+            </TabItem.Header>
             <Grid Opacity="0.0">
                 <Grid.Triggers>
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -134,7 +142,15 @@
 
             </Grid>
         </TabItem>
-        <TabItem Header="Experience">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                        <Path Data="{StaticResource ExperienceIconPath}" Fill="{DynamicResource WhiteText}" />
+                    </Viewbox>
+                    <TextBlock Text="Experience" FontSize="16" Foreground="{DynamicResource WhiteText}" />
+                </StackPanel>
+            </TabItem.Header>
             <Grid Opacity="0.0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0"/>
@@ -198,13 +214,35 @@
                 </Border>
             </Grid>
         </TabItem>
-        <TabItem Header="Education">
-            
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                        <Path Data="{StaticResource EducationIconData}" Fill="{DynamicResource WhiteText}" />
+                    </Viewbox>
+                    <TextBlock Text="Education" FontSize="16" Foreground="{DynamicResource WhiteText}" />
+                </StackPanel>
+            </TabItem.Header>
         </TabItem>
-        <TabItem Header="Portfolio">
-            
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                        <Path Data="{StaticResource PortfolioIconData}" Fill="{DynamicResource WhiteText}" />
+                    </Viewbox>
+                    <TextBlock Text="Portfolio" FontSize="16" Foreground="{DynamicResource WhiteText}" />
+                </StackPanel>
+            </TabItem.Header>
         </TabItem>
-        <TabItem Header="About This App">
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                        <Path Data="{StaticResource InformationData}" Fill="{DynamicResource WhiteText}" />
+                    </Viewbox>
+                    <TextBlock Text="About" FontSize="16" Foreground="{DynamicResource WhiteText}" />
+                </StackPanel>
+            </TabItem.Header>
             
         </TabItem>
     </TabControl>
