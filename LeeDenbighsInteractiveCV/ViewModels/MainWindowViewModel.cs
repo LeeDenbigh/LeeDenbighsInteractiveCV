@@ -16,6 +16,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ObservableCollection<Experience> _experiences;
+
         private readonly XmlFileService _xmlFileService;
 
         public ObservableCollection<Experience> Experiences
@@ -27,8 +28,6 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 OnPropertyChanged(nameof(Experiences));
             }
         }
-
-        public ObservableCollection<Experience> ExperienceList { get; set; }
 
         // Summary content
         private string _summaryContent;
@@ -43,6 +42,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
+
         // Experience Summary content
         private string _experienceSummaryContent;
         // Experience Summary content property
@@ -55,6 +55,22 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 OnPropertyChanged(nameof(ExperienceSummaryContent));
             }
         }
+
+
+        // Education Summary content
+        private string _educationSummaryContent;
+        // Education Summary content property
+        public string EducationSummaryContent
+        {
+            get => _educationSummaryContent;
+            set
+            {
+                _educationSummaryContent = value;
+                OnPropertyChanged(nameof(EducationSummaryContent));
+            }
+        }
+
+
 
         // On Property changed method.
         private void OnPropertyChanged(string propertyName)
@@ -71,6 +87,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             FileService fileService = new FileService();
             SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
             ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
+            EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/education_summary.txt");
         }
 
         private void LoadExperiences()

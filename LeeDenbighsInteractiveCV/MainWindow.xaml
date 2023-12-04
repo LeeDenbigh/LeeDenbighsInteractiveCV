@@ -32,6 +32,7 @@
 
     <!--Base Grid-->
     <TabControl Background="Transparent" BorderThickness="0 1 0 0" BorderBrush="{StaticResource AccentRegular}" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
+        <!--Overview-->
         <TabItem>
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal">
@@ -100,6 +101,7 @@
                 </Border>
             </Grid>
         </TabItem>
+        <!--Experience-->
         <TabItem>
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal">
@@ -141,8 +143,7 @@
                         <StackPanel Orientation="Vertical"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Top"
-                                    Grid.RowSpan="2"
-                                    >
+                                    Grid.RowSpan="2">
                             <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
                                 <TextBlock.LayoutTransform>
                                     <RotateTransform Angle="-90" />
@@ -159,7 +160,7 @@
                                 Text="Experience Summary"
                                 Foreground="{StaticResource WhiteText}"
                                 FontSize="20"
-                                FontWeight="Bold"
+                                FontWeight="Regular"
                                 Margin="0 0 0 20"
                                 />
                             <TextBlock
@@ -189,6 +190,7 @@
                 
             </Grid>
         </TabItem>
+        <!--Education-->
         <TabItem>
             <TabItem.Header>
                 <StackPanel Orientation="Horizontal">
@@ -213,35 +215,57 @@
                         Background="{StaticResource PageContentBackground}"
                         CornerRadius="10 10 0 0"
                         Margin="0 0 0 0">
-                </Border>
-
-                <!--Experience Grid-->
-                <Grid Margin="0 20 0 0" Grid.Column="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="20"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="200"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-
-                    <!--Experience Title-->
-                    <StackPanel Orientation="Vertical"
+                    
+                    <!--Education Grid-->
+                    <Grid Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <!--Education Title-->
+                        <StackPanel Orientation="Vertical"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Top"
-                                    Grid.RowSpan="2"
-                                    >
-                        <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="-90" />
-                            </TextBlock.LayoutTransform>
-                                <Run Text="education" />
+                                    Grid.RowSpan="3">
+                            
+                            <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-90" />
+                                </TextBlock.LayoutTransform>
+                                <Run Text="experience" />
                                 <Run Text="." Foreground="{StaticResource AccentRegular}" />
-                        </TextBlock>
-                    </StackPanel>
-                </Grid>
+                            </TextBlock>
+                        </StackPanel>
+                        <!--Summary title-->
+                        <TextBlock Text="Education Summary"
+                                   FontSize="20"
+                                   Foreground="{StaticResource WhiteText}"
+                                   FontWeight="Regular"
+                                   TextAlignment="Left"
+                                   Grid.Column="2"
+                                   TextWrapping="Wrap"/>
+                        <!--Education Summay-->
+                        <TextBlock Text="{Binding EducationSummaryContent}"
+                                   FontSize="16"
+                                   Foreground="{StaticResource DefaultText}"
+                                   FontWeight="Regular"
+                                   TextAlignment="Left"
+                                   Grid.Row="1"
+                                   Grid.Column="2"
+                                   TextWrapping="Wrap"
+                                   LineHeight="30"/>
+                        
+                    </Grid>
+
+                </Border>
             </Grid>
         </TabItem>
         <TabItem>
