@@ -10,21 +10,12 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        // Property changed event
         public event PropertyChangedEventHandler PropertyChanged;
 
+        // Summary content
         private string _summaryContent;
-        private string _experienceSummaryContent;
-
-        public string ExperienceSummaryContent
-        {
-            get => _experienceSummaryContent;
-            set
-            {
-                _experienceSummaryContent = value;
-                OnPropertyChanged(nameof(ExperienceSummaryContent));
-            }
-        }
-
+        // Summary content property.
         public string SummaryContent
         {
             get => _summaryContent;
@@ -35,11 +26,26 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
+        // Experience Summary content
+        private string _experienceSummaryContent;
+        // Experience Summary content property
+        public string ExperienceSummaryContent
+        {
+            get => _experienceSummaryContent;
+            set
+            {
+                _experienceSummaryContent = value;
+                OnPropertyChanged(nameof(ExperienceSummaryContent));
+            }
+        }
+
+        // On Property changed method.
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        // MainWindowViewModel constructor.
         public MainWindowViewModel()
         {
             FileService fileService = new FileService();
@@ -47,13 +53,5 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 
             ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
         }
-    }
-
-    public enum ActivePage
-    {
-        Overview,
-        Experience,
-        Education,
-        Portfolio,
     }
 }
