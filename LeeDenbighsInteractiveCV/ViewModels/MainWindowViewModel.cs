@@ -12,16 +12,26 @@ namespace LeeDenbighsInteractiveCV.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private string _summaryContent;
+        private string _experienceSummaryContent;
 
-
-        private string _fileContent;
-        public string FileContent
+        public string ExperienceSummaryContent
         {
-            get => _fileContent;
+            get => _experienceSummaryContent;
             set
             {
-                _fileContent = value;
-                OnPropertyChanged(nameof(FileContent));
+                _experienceSummaryContent = value;
+                OnPropertyChanged(nameof(ExperienceSummaryContent));
+            }
+        }
+
+        public string SummaryContent
+        {
+            get => _summaryContent;
+            set
+            {
+                _summaryContent = value;
+                OnPropertyChanged(nameof(SummaryContent));
             }
         }
 
@@ -33,7 +43,9 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         public MainWindowViewModel()
         {
             FileService fileService = new FileService();
-            FileContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
+            SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
+
+            ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
         }
     }
 

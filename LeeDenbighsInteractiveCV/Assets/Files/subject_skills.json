@@ -66,5 +66,9 @@
   {
     "Name": "Stack Overflow",
     "Level": 100
+  },
+  {
+    "Name": "XAML",
+    "Level": 75
   }
 ]

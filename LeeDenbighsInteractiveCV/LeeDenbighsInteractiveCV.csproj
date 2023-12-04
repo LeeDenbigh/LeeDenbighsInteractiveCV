@@ -80,6 +80,9 @@
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\SubjectSkillViewModel.cs" />
+    <Compile Include="Views\ExperienceBox.xaml.cs">
+      <DependentUpon>ExperienceBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InfoBoxView.xaml.cs">
       <DependentUpon>InfoBoxView.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ExperienceBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InfoBoxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +152,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="Assets\Files\experience_summary.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Files\subject_skills.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
