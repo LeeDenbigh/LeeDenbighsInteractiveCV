@@ -130,4 +130,35 @@
         </Setter>
     </Style>
     
+    <!--TabItem-->
+    <Style x:Key="MainTabItemStyle" TargetType="TabItem">
+        <Setter Property="Foreground" Value="{DynamicResource WhiteText}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="TabBorder" Background="{DynamicResource AccentDarker}"
+                            BorderThickness="0"
+                            BorderBrush="{StaticResource AccentRegular}"
+                            CornerRadius="5 5 0 0">
+                        <ContentPresenter x:Name="ContentSite"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                          ContentSource="Header"
+                                          Margin="20 10 20 10"
+                                          />
+                        
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="TabBorder" Property="Background" Value="{DynamicResource AccentDark}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="TabBorder" Property="Background" Value="{DynamicResource AccentRegular}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
 </ResourceDictionary>
