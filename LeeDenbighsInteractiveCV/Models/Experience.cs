@@ -14,7 +14,7 @@ namespace LeeDenbighsInteractiveCV.Models
         [XmlElement(ElementName = "title")]
         public string Title { get; set; }
 
-        [XmlElement(ElementName = "jobtite")]
+        [XmlElement(ElementName = "jobtitle")]
         public string JobTitle { get; set; }
 
         [XmlElement(ElementName = "dates")]
