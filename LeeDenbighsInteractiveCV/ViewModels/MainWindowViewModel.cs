@@ -65,12 +65,12 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         // MainWindowViewModel constructor.
         public MainWindowViewModel()
         {
+            _xmlFileService = new XmlFileService();
+            LoadExperiences();
+
             FileService fileService = new FileService();
             SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
             ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
-
-            _xmlFileService = new XmlFileService();
-            LoadExperiences();
         }
 
         private void LoadExperiences()

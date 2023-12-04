@@ -18,19 +18,21 @@
             </Grid.ColumnDefinitions>
             <Ellipse Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="pack://application:,,,/Assets/Images/me.jpg" />
+                    <ImageBrush ImageSource="{Binding Logo}" />
                 </Ellipse.Fill>
             </Ellipse>
             
             <!--Title-->
             <StackPanel Orientation="Vertical" Grid.Column="1">
-                <TextBlock Text="{Binding ExperienceTitle}" Foreground="{StaticResource DefaultText}"
+                <TextBlock Text="{Binding Title}" Foreground="{StaticResource DefaultText}"
                            FontSize="20" Margin="0 0 0 10"/>
-                <TextBlock Text="{Binding ExperienceSubtitle}" Foreground="{StaticResource DefaultText}"
+                <TextBlock Text="{Binding JobTitle}" Foreground="{StaticResource DefaultText}"
+                           FontSize="14"/>
+                <TextBlock Text="{Binding Dates}" Foreground="{StaticResource DefaultText}"
                            FontSize="14"/>
             </StackPanel>
 
-            <TextBlock Text="{Binding ExperienceDescription}" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource WhiteText}" FontSize="16" TextAlignment="Justify" />
+            <TextBlock Text="{Binding Description}" Grid.Row="1" Grid.Column="1" Foreground="{StaticResource WhiteText}" FontSize="16" TextAlignment="Justify" />
         </Grid>
     </Border>
 </UserControl>

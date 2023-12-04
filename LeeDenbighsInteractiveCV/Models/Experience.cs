@@ -24,13 +24,13 @@ namespace LeeDenbighsInteractiveCV.Models
         public string Description { get; set; }
 
         [XmlElement(ElementName = "logopath")]
-        public ImageSource Logo { get; set; }
+        public string LogoPath { get; set; }
     }
 
     [XmlRoot(ElementName = "experiences")]
     public class Experiences
     {
-        [XmlElement(ElementName = "experiences")]
+        [XmlElement(ElementName = "experience")]
         public List<Experience> ExperienceList { get; set; } 
 
         public Experiences()

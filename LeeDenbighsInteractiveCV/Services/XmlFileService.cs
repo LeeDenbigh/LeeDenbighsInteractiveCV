@@ -30,7 +30,7 @@ namespace LeeDenbighsInteractiveCV.Services
                 using (FileStream reader = new FileStream(xmlFilePath, FileMode.Open))
                 {
                     // Deserialise the file content.
-                    Experiences experiences = (Experiences)serializer.Deserialize(reader);
+                    var experiences = (Experiences)serializer.Deserialize(reader);
                     // Return the list of experiences.
                     return experiences;
                 }

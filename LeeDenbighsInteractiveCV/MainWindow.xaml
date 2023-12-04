@@ -23,6 +23,11 @@
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
         </Storyboard>
+        
+        <!--Template for the Experiences-->
+        <DataTemplate x:Key="ExperienceTemplate">
+            <views:ExperienceBox />
+        </DataTemplate>
     </Window.Resources>
 
     <!--Base Grid-->
@@ -66,51 +71,6 @@
 
                 </Border>
 
-                <!--Sidebar Buttons-->
-                <!--<StackPanel Grid.Row="1" Grid.RowSpan="2" Grid.Column="1">
-                    -->
-                <!--Home Panel-->
-                <!--
-                    <Button Style="{StaticResource NoHoverButton}">
-                        <Viewbox Style="{StaticResource ViewBoxIcon}"  >
-                            <Path Style="{StaticResource PathStyle}" Data="{StaticResource HomeIconPath}"/>
-                        </Viewbox>
-                    </Button>
-                    -->
-                <!--Experience Panel-->
-                <!--
-                    <Button Style="{StaticResource NoHoverButton}">
-                        <Viewbox Style="{StaticResource ViewBoxIcon}"  >
-                            <Path Style="{StaticResource PathStyle}" Data="{StaticResource ExperienceIconPath}"/>
-                        </Viewbox>
-                    </Button>
-                    -->
-                <!--Education Panel-->
-                <!--
-                    <Button Style="{StaticResource NoHoverButton}">
-                        <Viewbox Style="{StaticResource ViewBoxIcon}"  >
-                            <Path Style="{StaticResource PathStyle}" Data="{StaticResource EducationIconData}"/>
-                        </Viewbox>
-                    </Button>
-                    -->
-                <!--Portfolio Panel-->
-                <!--
-                    <Button Style="{StaticResource NoHoverButton}">
-                        <Viewbox Style="{StaticResource ViewBoxIcon}"  >
-                            <Path Style="{StaticResource PathStyle}" Data="{StaticResource PortfolioIconData}"/>
-                        </Viewbox>
-                    </Button>
-                    -->
-                <!--Info Panel-->
-                <!--
-                    <Button Style="{StaticResource NoHoverButton}">
-                        <Viewbox Style="{StaticResource ViewBoxIcon}"  >
-                            <Path Style="{StaticResource PathStyle}" 
-                      Data="{StaticResource InfoIconData}"/>
-                        </Viewbox>
-                    </Button>
-                </StackPanel>-->
-
                 <!--Window Title-->
                 <Image Source="Assets/Images/overview.png" Grid.Column="1" Grid.Row="1" Height="227" />
 
@@ -137,9 +97,7 @@
                             <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin="20 0"/>
                         </ScrollViewer>
                     </Grid>
-
                 </Border>
-
             </Grid>
         </TabItem>
         <TabItem>
@@ -211,8 +169,20 @@
                                    FontSize="16"
                                 LineHeight="30"/>
                         </StackPanel>
+
+                        <StackPanel Grid.Column="1" Grid.Row="2" >
+                            <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Vertical" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
                     </Grid>
                 </Border>
+
+                
             </Grid>
         </TabItem>
         <TabItem>
