@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LeeDenbighsInteractiveCV"
         xmlns:views="clr-namespace:LeeDenbighsInteractiveCV.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="832" Width="1280" Background="{StaticResource WindowBackground}"
+        Title="Lee Denbigh's Interactive CV" Height="832" Width="1280" Background="{StaticResource WindowBackground}"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Storyboard x:Key="SlideUpOnLoad">
@@ -134,7 +134,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock FontSize="23" Text="Summary" Foreground="{StaticResource WhiteText}" FontWeight="Bold" />
                         <ScrollViewer Grid.Row="1" Margin="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                            <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" Margin="20 0"/>
+                            <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin="20 0"/>
                         </ScrollViewer>
                     </Grid>
 
@@ -208,7 +208,8 @@
                                    Text="{Binding ExperienceSummaryContent}"
                                    Foreground="{StaticResource DefaultText}"
                                    TextWrapping="Wrap" TextAlignment="Justify"
-                                   FontSize="16"/>
+                                   FontSize="16"
+                                LineHeight="30"/>
                         </StackPanel>
                     </Grid>
                 </Border>
