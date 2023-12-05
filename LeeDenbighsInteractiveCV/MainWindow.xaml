@@ -191,11 +191,19 @@
                                    Foreground="{StaticResource DefaultText}"
                                    TextWrapping="Wrap" TextAlignment="Justify"
                                    FontSize="16"
-                                LineHeight="30"/>
+                                LineHeight="30">
+                                    <TextBlock.DataContext>
+                                        <vm:ExperienceViewModel />
+                                    </TextBlock.DataContext>
+                                </TextBlock>
+
                             </StackPanel>
 
                             <ScrollViewer Grid.Column="1" Grid.Row="2">
-                                <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
+                                <ScrollViewer.DataContext>
+                                    <vm:ExperienceViewModel />
+                                </ScrollViewer.DataContext>
+                            <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <StackPanel Orientation="Vertical" />
