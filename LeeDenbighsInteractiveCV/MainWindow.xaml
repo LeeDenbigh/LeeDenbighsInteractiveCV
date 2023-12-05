@@ -262,7 +262,7 @@
                                    Grid.Column="2"
                                    TextWrapping="Wrap"
                                    LineHeight="30"/>
-                        
+                        <!--Education Boxes-->
                     </Grid>
 
                 </Border>

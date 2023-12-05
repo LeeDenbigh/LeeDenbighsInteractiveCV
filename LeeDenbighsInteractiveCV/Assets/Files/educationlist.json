@@ -1,0 +1,17 @@
+[
+  {
+    "EducationTitle": "The Hollins Technology College (High School)",
+    "EducationSubtitle": "GCSE - Art, Art Textiles, Graphics, Math, English (2009)",
+    "EducationImage": "Assets/Images/hollins.png"
+  },
+  {
+    "EducationTitle": "AccRoss College, Accrington (Uni)",
+    "EducationSubtitle": "Software Engineering (2011)",
+    "EducationImage": "Assets/Images/accross.png"
+  },
+  {
+    "EducationTitle": "Liverpool Community College",
+    "EducationSubtitle": "Computing (2012)",
+    "EducationImage": "Assets/Images/liverpoolcommunitycollege.png"
+  }
+]
