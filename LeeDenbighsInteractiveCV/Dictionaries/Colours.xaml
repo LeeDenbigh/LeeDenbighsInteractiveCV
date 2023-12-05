@@ -6,9 +6,9 @@
         <GradientStop Color="#FF16121B" Offset="0"/>
     </LinearGradientBrush>
     <!--Page Content Background-->
-    <SolidColorBrush x:Key="PageContentBackground" Color="#FF1A171D" />
+    <SolidColorBrush x:Key="PageContentBackground" Color="#BF1A171D" />
     <!--Module Background-->
-    <SolidColorBrush x:Key="ModuleBackground" Color="#FF231F27" />
+    <SolidColorBrush x:Key="ModuleBackground" Color="#CC231F27" />
     <!--Light Text-->
     <SolidColorBrush x:Key="DefaultText" Color="#FFD2D2D2" />
     <SolidColorBrush x:Key="WhiteText" Color="#FFFFFFFF" />

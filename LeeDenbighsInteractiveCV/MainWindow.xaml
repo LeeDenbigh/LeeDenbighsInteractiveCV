@@ -35,8 +35,10 @@
             <views:EducationBox />
         </DataTemplate>
     </Window.Resources>
-
-    <!--Base Grid-->
+    <Grid>
+        <Image Source="pack://application:,,,/Assets/Images/background_image.png"
+               Width="512" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <!--Base Grid-->
     <TabControl Background="Transparent" BorderThickness="0 1 0 0" BorderBrush="{StaticResource AccentRegular}" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
         <!--Overview-->
         <TabItem>
@@ -180,7 +182,7 @@
                         <ScrollViewer Grid.Column="1" Grid.Row="2"
                                       VerticalScrollBarVisibility="Auto"
                                       HorizontalScrollBarVisibility="Disabled">
-                            <StackPanel >
+                            <StackPanel>
                                 <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
@@ -264,7 +266,7 @@
                                    FontSize="16"
                                    Foreground="{StaticResource DefaultText}"
                                    FontWeight="Regular"
-                                   TextAlignment="Justify"
+                                   TextAlignment="Left"
                                    Grid.Row="1"
                                    Grid.Column="1"
                                    TextWrapping="Wrap"
@@ -277,7 +279,7 @@
                             <ItemsControl ItemTemplate="{StaticResource EducationTemplate}" ItemsSource="{Binding Education}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <StackPanel />
+                                        <StackPanel Margin="20 0 0 0" />
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
                             </ItemsControl>
@@ -370,4 +372,6 @@
         </TabItem>
     </TabControl>
 
+    </Grid>
+    
 </Window>
