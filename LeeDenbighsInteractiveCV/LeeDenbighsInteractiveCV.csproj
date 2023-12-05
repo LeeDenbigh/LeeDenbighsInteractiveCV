@@ -81,7 +81,9 @@
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\JsonFileService.cs" />
     <Compile Include="Services\XmlFileService.cs" />
+    <Compile Include="ViewModels\EmailViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\SubjectSkillViewModel.cs" />
     <Compile Include="Views\EducationBox.xaml.cs">

@@ -25,5 +25,10 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 new Skills { Name = "Game Design", Percentage = 30, ColorHex = "#8A38CB" }
             };
         }
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

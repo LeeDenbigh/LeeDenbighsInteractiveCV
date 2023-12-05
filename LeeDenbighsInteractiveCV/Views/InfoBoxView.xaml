@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
+             xmlns:vm="clr-namespace:LeeDenbighsInteractiveCV.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -58,13 +59,17 @@
         
         <!--Buttons-->
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel.DataContext>
+                <vm:EmailViewModel />
+            </StackPanel.DataContext>
 
             <!--Contact button-->
             <Button Padding="20 5"
                     HorizontalAlignment="Left"
                     Style="{StaticResource ButtonAccent}"
                     Content="Contact Me"
-                    Margin="0 0 20 0"/>
+                    Margin="0 0 20 0"
+                    Command="{Binding OpenEmailCommand}"/>
 
             <!--View PDF Version button-->
             <Button Style="{StaticResource ButtonRegular}"
