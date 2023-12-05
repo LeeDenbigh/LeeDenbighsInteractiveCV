@@ -32,7 +32,7 @@
             </Ellipse.Fill>
         </Ellipse>
 
-        <TextBlock Text="Skill Level" VerticalAlignment="Bottom" Grid.Row="1" FontSize="16" Foreground="{StaticResource WhiteText}" FontWeight="Bold"/>
+        <TextBlock Text="Overall Skills" VerticalAlignment="Bottom" Grid.Row="1" FontSize="16" Foreground="{StaticResource WhiteText}" FontWeight="Bold"/>
 
         <!--My Information-->
         <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="top" HorizontalAlignment="Left" Margin="10 20">

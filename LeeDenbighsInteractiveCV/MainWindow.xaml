@@ -116,9 +116,9 @@
                                 <RowDefinition Height="50"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock FontSize="23" Text="Summary" Foreground="{StaticResource WhiteText}" FontWeight="Bold" />
+                            <TextBlock FontSize="20" Text="My Summary" Foreground="{StaticResource WhiteText}" FontWeight="Regular" />
                             <ScrollViewer Grid.Row="1" Margin="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                                <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin="20 0"/>
+                                <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin=" 0"/>
                             </ScrollViewer>
                         </Grid>
                     </Border>
@@ -194,9 +194,7 @@
                                 LineHeight="30"/>
                             </StackPanel>
 
-                            <ScrollViewer Grid.Column="1" Grid.Row="2"
-                                      VerticalScrollBarVisibility="Auto"
-                                      HorizontalScrollBarVisibility="Disabled">
+                            <ScrollViewer Grid.Column="1" Grid.Row="2">
                                 <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
