@@ -28,6 +28,11 @@
         <DataTemplate x:Key="ExperienceTemplate">
             <views:ExperienceBox />
         </DataTemplate>
+        
+        <!--Template for the Education-->
+        <DataTemplate x:Key="EducationTemplate">
+            <views:EducationBox />
+        </DataTemplate>
     </Window.Resources>
 
     <!--Base Grid-->
@@ -263,6 +268,16 @@
                                    TextWrapping="Wrap"
                                    LineHeight="30"/>
                         <!--Education Boxes-->
+                        <StackPanel Grid.Row="2"
+                                    Grid.Column="2">
+                            <ItemsControl ItemTemplate="{StaticResource EducationTemplate}" ItemsSource="{Binding Education}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </StackPanel>
                     </Grid>
 
                 </Border>

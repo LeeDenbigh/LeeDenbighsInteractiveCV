@@ -79,10 +79,14 @@
     <Compile Include="Models\Skills.cs" />
     <Compile Include="Models\SubjectSkill.cs" />
     <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\JsonFileService.cs" />
     <Compile Include="Services\XmlFileService.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\SubjectSkillViewModel.cs" />
+    <Compile Include="Views\EducationBox.xaml.cs">
+      <DependentUpon>EducationBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ExperienceBox.xaml.cs">
       <DependentUpon>ExperienceBox.xaml</DependentUpon>
     </Compile>
@@ -119,6 +123,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\EducationBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ExperienceBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +158,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Assets\Images\hollins.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\ACCROSS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\The_City_of_Liverpool_College_Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Images\Logo-fiverr.png" />
     <Resource Include="Assets\Images\bhf.png" />
     <Resource Include="Assets\Images\me.jpg" />
@@ -167,7 +184,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Files\subject_skills.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Files\educationlist.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -197,7 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Files\summary.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

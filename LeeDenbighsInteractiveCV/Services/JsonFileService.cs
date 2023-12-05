@@ -24,10 +24,7 @@ namespace LeeDenbighsInteractiveCV.Services
                     var edList = JsonConvert.DeserializeObject<List<Education>>(jsonData);
                     if (edList != null)
                     {
-                        foreach (var ed in edList)
-                        {
-                            educationList.Add(ed);
-                        }
+                        educationList = edList;
                     }
                 }
             }

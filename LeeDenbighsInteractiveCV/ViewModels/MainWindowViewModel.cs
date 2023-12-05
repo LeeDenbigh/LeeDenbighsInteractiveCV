@@ -16,9 +16,6 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ObservableCollection<Experience> _experiences;
-
-        private readonly XmlFileService _xmlFileService;
-
         public ObservableCollection<Experience> Experiences
         {
             get => _experiences;
@@ -28,6 +25,19 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 OnPropertyChanged(nameof(Experiences));
             }
         }
+
+        private ObservableCollection<Education> _education;
+        public ObservableCollection<Education> Education
+        {
+            get => _education;
+            set
+            {
+                _education = value;
+                OnPropertyChanged(nameof(Education));
+            }
+        }
+
+        private readonly XmlFileService _xmlFileService;
 
         // Summary content
         private string _summaryContent;
@@ -83,11 +93,33 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         {
             _xmlFileService = new XmlFileService();
             LoadExperiences();
+            LoadEducation();
 
             FileService fileService = new FileService();
             SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
             ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
             EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/education_summary.txt");
+        }
+
+        private void LoadEducation()
+        {
+            _education = new ObservableCollection<Education>();
+
+            try
+            {
+                JsonFileService jsonFileService = new JsonFileService();
+                List<Education> edList = jsonFileService.GetEducationList();
+
+                foreach (var ed in edList)
+                {
+                    Education.Add(ed);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         private void LoadExperiences()

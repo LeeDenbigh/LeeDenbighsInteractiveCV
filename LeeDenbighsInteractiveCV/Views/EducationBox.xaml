@@ -8,7 +8,7 @@
     <Border Style="{StaticResource Box}">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="128"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -17,7 +17,8 @@
             </Grid.RowDefinitions>
             <!--Logo/Picture-->
             <Ellipse Width="100" Height="100"
-                     VerticalAlignment="Center">
+                     VerticalAlignment="Center"
+                     Grid.RowSpan="2">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="{Binding EducationImage}" />
                 </Ellipse.Fill>
@@ -28,14 +29,18 @@
                        FontSize="20"
                        FontWeight="Bold"
                        Foreground="{StaticResource WhiteText}"
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       VerticalAlignment="Bottom"/>
 
             <!--Education Subtitle-->
             <TextBlock Text="{Binding EducationSubtitle}"
-                       FontSize="16"
-                       FontWeight="Bold"
+                       FontSize="14"
+                       FontWeight="Regular"
                        Foreground="{StaticResource AccentRegular}"
-                       Grid.Column="1"/>
+                       Grid.Column="1"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       Margin="0 10 0 0" />
         </Grid>
     </Border>
 </UserControl>
