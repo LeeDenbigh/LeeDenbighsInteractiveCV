@@ -59,9 +59,7 @@
         
         <!--Buttons-->
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <StackPanel.DataContext>
-                <vm:EmailViewModel />
-            </StackPanel.DataContext>
+            
 
             <!--Contact button-->
             <Button Padding="20 5"
@@ -69,18 +67,29 @@
                     Style="{StaticResource ButtonAccent}"
                     Content="Contact Me"
                     Margin="0 0 20 0"
-                    Command="{Binding OpenEmailCommand}"/>
+                    Command="{Binding OpenEmailCommand}">
+                <Button.DataContext>
+                    <vm:EmailViewModel />
+                </Button.DataContext>
+            </Button>
 
             <!--View PDF Version button-->
             <Button Style="{StaticResource ButtonRegular}"
                     Content="View PDF Version"
                     Margin="0 0 20 0"
-                    HorizontalAlignment="Center"/>
+                    HorizontalAlignment="Center"
+                    Command="{Binding ShowPDFWindow}"/>
+
 
             <!--GitHub button-->
             <Button Style="{StaticResource ButtonRegular}" 
                     Content="GitHub"
-                    HorizontalAlignment="Right"/>
+                    HorizontalAlignment="Right"
+                    Command="{Binding GitHubCommand}">
+                <Button.DataContext>
+                    <vm:GitHubViewModel />
+                </Button.DataContext>
+            </Button>
         </StackPanel>
         
         <!--Skill Indicator-->

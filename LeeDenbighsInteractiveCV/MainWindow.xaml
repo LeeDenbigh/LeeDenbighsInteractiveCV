@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeeDenbighsInteractiveCV"
+        xmlns:vm="clr-namespace:LeeDenbighsInteractiveCV.ViewModels"
         xmlns:views="clr-namespace:LeeDenbighsInteractiveCV.Views"
         mc:Ignorable="d"
         Title="Lee Denbigh's Interactive CV" Height="832" Width="1280" Background="{StaticResource WindowBackground}"
@@ -225,7 +226,7 @@
                     <Grid Margin="0 20 0 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="20"/>
                         </Grid.ColumnDefinitions>
@@ -255,20 +256,23 @@
                                    Foreground="{StaticResource WhiteText}"
                                    FontWeight="Regular"
                                    TextAlignment="Left"
-                                   Grid.Column="2"
-                                   TextWrapping="Wrap"/>
+                                   Grid.Column="1"
+                                   TextWrapping="Wrap"
+                                   Margin="20 0 0 0"/>
                         <!--Education Summay-->
                         <TextBlock Text="{Binding EducationSummaryContent}"
                                    FontSize="16"
                                    Foreground="{StaticResource DefaultText}"
                                    FontWeight="Regular"
-                                   TextAlignment="Left"
+                                   TextAlignment="Justify"
                                    Grid.Row="1"
-                                   Grid.Column="2"
+                                   Grid.Column="1"
                                    TextWrapping="Wrap"
-                                   LineHeight="30"/>
+                                   LineHeight="30"
+                                   Margin="20 0 0 0" />
                         <!--Education Boxes-->
-                        <StackPanel Grid.Row="2"
+                        <StackPanel Grid.Row="0"
+                                    Grid.RowSpan="3"
                                     Grid.Column="2">
                             <ItemsControl ItemTemplate="{StaticResource EducationTemplate}" ItemsSource="{Binding Education}">
                                 <ItemsControl.ItemsPanel>
@@ -302,7 +306,67 @@
                     <TextBlock Text="About" FontSize="16" Foreground="{DynamicResource WhiteText}" />
                 </StackPanel>
             </TabItem.Header>
-            
+            <Grid Opacity="0.0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
+                    </EventTrigger>
+                </Grid.Triggers>
+                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                        Background="{StaticResource PageContentBackground}"
+                        CornerRadius="10 10 0 0"
+                        Margin="0 0 0 0">
+
+                    <!--Education Grid-->
+                    <Grid Margin="0 20 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <!--Education Title-->
+                        <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    Grid.RowSpan="3">
+
+                            <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="-90" />
+                                </TextBlock.LayoutTransform>
+                                <Run Text="about this app" />
+                                <Run Text="." Foreground="{StaticResource AccentRegular}" />
+                            </TextBlock>
+                        </StackPanel>
+                        <!--About Summay-->
+                        <TextBlock Text="{Binding AboutContent}"
+                                   FontSize="16"
+                                   Foreground="{StaticResource DefaultText}"
+                                   FontWeight="Regular"
+                                   TextAlignment="Left"
+                                   Grid.Row="1"
+                                   Grid.Column="2"
+                                   TextWrapping="Wrap"
+                                   LineHeight="30">
+                            <TextBlock.DataContext>
+                                <vm:AboutViewModel />
+                            </TextBlock.DataContext>
+                        </TextBlock>
+                    </Grid>
+
+                </Border>
+            </Grid>
         </TabItem>
     </TabControl>
 
