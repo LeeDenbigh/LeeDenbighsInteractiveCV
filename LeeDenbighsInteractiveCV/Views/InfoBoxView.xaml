@@ -38,12 +38,12 @@
         <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="top" HorizontalAlignment="Left" Margin="10 20">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
-                    <Setter Property="Margin" Value="0 0 0 10" />
+                    <Setter Property="Margin" Value="0 0 0 0" />
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="Lee Denbigh" Foreground="{StaticResource WhiteText}" FontSize="20" />
-            <TextBlock Text="07531 276918" Foreground="{StaticResource DefaultText}" FontSize="14" />
-            <TextBlock Text="leedenbigh@googlemail.com" Foreground="{StaticResource DefaultText}" FontSize="14" />
+            <TextBlock Text="Lee Denbigh" Foreground="{StaticResource AccentRegular}" FontWeight="Bold" FontSize="30" />
+            <TextBlock Text="07531 276918" Foreground="{StaticResource DefaultText}" FontSize="20" />
+            <TextBlock Text="leedenbigh@googlemail.com" Foreground="{StaticResource DefaultText}" FontSize="20" />
         </StackPanel>
         
         <!--Seperator-->

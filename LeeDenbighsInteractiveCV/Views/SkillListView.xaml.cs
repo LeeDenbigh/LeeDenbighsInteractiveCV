@@ -48,7 +48,25 @@ namespace LeeDenbighsInteractiveCV.Views
                 progressBar.BeginAnimation(ProgressBar.ValueProperty, animation);
                 // Add a tooltip to the progressbar, so when the viewer hovers over,
                 // they can see the percentage.
-                progressBar.ToolTip = $"My skill level for {skills.Name} is {skills.Level}%";
+
+                Style toolTipStyle = FindResource("ToolTipStyle") as Style;
+
+                if(toolTipStyle != null)
+                {
+                    ToolTip customToolTip = new ToolTip
+                    {
+                        Style = toolTipStyle,
+                        Content = $"My skill level for {skills.Name} is {skills.Level}%"
+                    };
+
+                    progressBar.ToolTip = customToolTip;
+                }
+                else
+                {
+                    MessageBox.Show("Tooltip not found");
+                }
+
+                
             }
         }
     }

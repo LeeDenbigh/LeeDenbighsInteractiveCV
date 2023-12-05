@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>CVIcon2%281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>LeeDenbighsInteractiveCV.App</StartupObject>
@@ -190,6 +190,9 @@
     <Content Include="Assets\Files\about.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Assets\Images\CVIcon2.png" />
+    <Resource Include="CVIcon2%281%29.ico" />
+    <Resource Include="CVIcon2.ico" />
     <Resource Include="Assets\Images\background_image.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

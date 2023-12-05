@@ -2,20 +2,20 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Window Background-->
     <LinearGradientBrush x:Key="WindowBackground" EndPoint="0,1" StartPoint="1,0">
-        <GradientStop Color="#FF141414" Offset="1"/>
-        <GradientStop Color="#FF16121B" Offset="0"/>
+        <GradientStop Color="White" Offset="1"/>
+        <GradientStop Color="White" Offset="0"/>
     </LinearGradientBrush>
     <!--Page Content Background-->
-    <SolidColorBrush x:Key="PageContentBackground" Color="#BF1A171D" />
+    <SolidColorBrush x:Key="PageContentBackground" Color="#7FFFFFFF" />
     <!--Module Background-->
-    <SolidColorBrush x:Key="ModuleBackground" Color="#CC231F27" />
+    <SolidColorBrush x:Key="ModuleBackground" Color="#7FFFFFFF" />
     <!--Light Text-->
-    <SolidColorBrush x:Key="DefaultText" Color="#FFD2D2D2" />
-    <SolidColorBrush x:Key="WhiteText" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="DefaultText" Color="#FF1B1B1B" />
+    <SolidColorBrush x:Key="WhiteText" Color="Black" />
     <!--Accent Colour-->
-    <SolidColorBrush x:Key="AccentRegular" Color="#FFFF007A" />
-    <SolidColorBrush x:Key="AccentDark" Color="#FF7B2559" />
-    <SolidColorBrush x:Key="AccentDarker" Color="#FF481534" />
+    <SolidColorBrush x:Key="AccentRegular" Color="#FF009CFF" />
+    <SolidColorBrush x:Key="AccentDark" Color="#FF255D7B" />
+    <SolidColorBrush x:Key="AccentDarker" Color="#FF153448" />
     <!--Software Accent-->
     <SolidColorBrush x:Key="SoftwareAccent" Color="#FFE89416" />
     <!--Game Design Accent-->
@@ -25,10 +25,13 @@
     <!--Design Accent-->
     <SolidColorBrush x:Key="DesignAccent" Color="#FF3896CB" />
     <!--Normal Button-->
-    <SolidColorBrush x:Key="ButtonBackgroundPress" Color="#FF353239" />
-    <SolidColorBrush x:Key="ButtonBackgroundOver" Color="#FF312A3A" />
-    <SolidColorBrush x:Key="ButtonBackgroundRegular" Color="#FF402F56" />
+    <SolidColorBrush x:Key="ButtonBackgroundPress" Color="#FF6B747B" />
+    <SolidColorBrush x:Key="ButtonBackgroundOver" Color="#FF2A323A" />
+    <SolidColorBrush x:Key="ButtonBackgroundRegular" Color="#FF2F4356" />
     <!--Seperator-->
     <SolidColorBrush x:Key="Seperator" Color="#FF313131" />
+    <!--Tab-->
+    <!--Header-->
+    <SolidColorBrush x:Key="TabHeaderText" Color="#FFFFFF" />
 
 </ResourceDictionary>

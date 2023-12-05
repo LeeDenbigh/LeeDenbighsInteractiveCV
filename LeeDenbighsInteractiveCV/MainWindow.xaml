@@ -18,18 +18,18 @@
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
             <ThicknessAnimation Storyboard.TargetProperty="Margin"
-                                From="0,100,0,0" To="0,0,0,0" Duration="0:0:1" >
+                                From="0,100,0,0" To="0,20,0,0" Duration="0:0:1" >
                 <ThicknessAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseOut" />
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
         </Storyboard>
-        
+
         <!--Template for the Experiences-->
         <DataTemplate x:Key="ExperienceTemplate">
             <views:ExperienceBox />
         </DataTemplate>
-        
+
         <!--Template for the Education-->
         <DataTemplate x:Key="EducationTemplate">
             <views:EducationBox />
@@ -37,152 +37,166 @@
     </Window.Resources>
     <Grid>
         <Image Source="pack://application:,,,/Assets/Images/background_image.png"
-               Width="512" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+               Width="512" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+               Visibility="Visible"
+               Opacity=".1"/>
         <!--Base Grid-->
-    <TabControl Background="Transparent" BorderThickness="0 1 0 0" BorderBrush="{StaticResource AccentRegular}" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
-        <!--Overview-->
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
-                        <Path Data="{StaticResource HomeIconPath}" Fill="{DynamicResource WhiteText}" />
-                    </Viewbox>
-                    <TextBlock Text="Home" FontSize="16" Foreground="{DynamicResource WhiteText}" />
-                </StackPanel>
-            </TabItem.Header>
-            <Grid Opacity="0.0">
-                <Grid.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
-                    </EventTrigger>
-                </Grid.Triggers>
-                <!--Base Columns-->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="00"/>
-                    <ColumnDefinition Width="82" />
-                    <ColumnDefinition Width="780"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="320" />
-                    <ColumnDefinition Width="00"/>
-                </Grid.ColumnDefinitions>
+        <TabControl Background="Transparent" BorderThickness="0 1 0 0" BorderBrush="{StaticResource AccentRegular}" Margin="20 20 20 0" ItemContainerStyle="{DynamicResource MainTabItemStyle}">
+            <!--Overview-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                            <Path Data="{StaticResource HomeIconPath}" Fill="{DynamicResource TabHeaderText}" />
+                        </Viewbox>
+                        <TextBlock Text="Home" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Opacity="0.0" Margin="0 20 0 0">
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <!--Base Columns-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="00"/>
+                        <ColumnDefinition Width="82" />
+                        <ColumnDefinition Width="780"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="320" />
+                        <ColumnDefinition Width="00"/>
+                    </Grid.ColumnDefinitions>
 
-                <!--Base Rows-->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0"/>
-                    <RowDefinition Height="323" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+                    <!--Base Rows-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="323" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-                <!--Page Content-->
-                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                    <!--Page Content-->
+                    <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
                 Background="{StaticResource PageContentBackground}"
                 CornerRadius="10  0 0 0">
 
-                </Border>
+                    </Border>
 
-                <!--Window Title-->
-                <Image Source="Assets/Images/overview.png" Grid.Column="1" Grid.Row="1" Height="227" />
+                    <!--Window Title-->
+                    <!--Experience Title-->
+                    <StackPanel Orientation="Vertical"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    Grid.RowSpan="2"
+                                Grid.Column="1">
+                        <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="-90" />
+                            </TextBlock.LayoutTransform>
+                                <Run Text="overview" />
+                                <Run Text="." Foreground="{StaticResource AccentRegular}" />
+                        </TextBlock>
+                    </StackPanel>
 
-                <!--Info Box-->
-                <Border Style="{StaticResource Box}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >
-                    <views:InfoBoxView Grid.Column="2" Grid.Row="1" Margin="0 10 0 0" />
-                </Border>
+                    <!--Info Box-->
+                    <Border Style="{StaticResource Box}" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" >
+                        <views:InfoBoxView Grid.Column="2" Grid.Row="1" Margin="0 10 0 0" />
+                    </Border>
 
-                <!--Interactive Skill Indicator-->
-                <Border Style="{StaticResource Box}" Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Right" MinWidth="271" MaxWidth="271">
-                    <views:SkillListView />
-                </Border>
+                    <!--Interactive Skill Indicator-->
+                    <Border Style="{StaticResource Box}" Grid.Column="4" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Right" MinWidth="271" MaxWidth="271">
+                        <views:SkillListView />
+                    </Border>
 
-                <!--Summary Panel-->
+                    <!--Summary Panel-->
 
-                <Border Style="{StaticResource Box}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock FontSize="23" Text="Summary" Foreground="{StaticResource WhiteText}" FontWeight="Bold" />
-                        <ScrollViewer Grid.Row="1" Margin="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                            <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin="20 0"/>
-                        </ScrollViewer>
-                    </Grid>
-                </Border>
-            </Grid>
-        </TabItem>
-        <!--Experience-->
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
-                        <Path Data="{StaticResource ExperienceIconPath}" Fill="{DynamicResource WhiteText}" />
-                    </Viewbox>
-                    <TextBlock Text="Experience" FontSize="16" Foreground="{DynamicResource WhiteText}" />
-                </StackPanel>
-            </TabItem.Header>
-            <Grid Opacity="0.0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="0"/>
-                </Grid.ColumnDefinitions>
-                <Grid.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
-                    </EventTrigger>
-                </Grid.Triggers>
-                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                    <Border Style="{StaticResource Box}" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock FontSize="23" Text="Summary" Foreground="{StaticResource WhiteText}" FontWeight="Bold" />
+                            <ScrollViewer Grid.Row="1" Margin="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBlock FontSize="16" Text="{Binding SummaryContent}" Foreground="{StaticResource DefaultText}" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="30" Margin="20 0"/>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <!--Experience-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                            <Path Data="{StaticResource ExperienceIconPath}" Fill="{DynamicResource TabHeaderText}" />
+                        </Viewbox>
+                        <TextBlock Text="Experience" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Opacity="0.0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
                         Background="{StaticResource PageContentBackground}"
                         CornerRadius="10 10 0 0"
                         Margin="0 0 0 0">
-                    
-                    <!--Experience Grid-->
-                    <Grid Margin="0 20 0 0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="20"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="200"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        
-                        <!--Experience Title-->
-                        <StackPanel Orientation="Vertical"
+
+                        <!--Experience Grid-->
+                        <Grid Margin="0 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="200"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!--Experience Title-->
+                            <StackPanel Orientation="Vertical"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Top"
                                     Grid.RowSpan="2">
-                            <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
-                                <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="-90" />
-                                </TextBlock.LayoutTransform>
+                                <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-90" />
+                                    </TextBlock.LayoutTransform>
                                 <Run Text="experience" />
                                 <Run Text="." Foreground="{StaticResource AccentRegular}" />
-                            </TextBlock>
-                        </StackPanel>
-                        
-                        <!--Education Summary Text-->
-                        <StackPanel Grid.Column="1"
+                                </TextBlock>
+                            </StackPanel>
+
+                            <!--Education Summary Text-->
+                            <StackPanel Grid.Column="1"
                                     Margin="20 0 20 0">
-                            <TextBlock
+                                <TextBlock
                                 Text="Experience Summary"
                                 Foreground="{StaticResource WhiteText}"
                                 FontSize="20"
                                 FontWeight="Regular"
                                 Margin="0 0 0 20"
                                 />
-                            <TextBlock
+                                <TextBlock
                                    Text="{Binding ExperienceSummaryContent}"
                                    Foreground="{StaticResource DefaultText}"
                                    TextWrapping="Wrap" TextAlignment="Justify"
                                    FontSize="16"
                                 LineHeight="30"/>
-                        </StackPanel>
+                            </StackPanel>
 
-                        <ScrollViewer Grid.Column="1" Grid.Row="2"
+                            <ScrollViewer Grid.Column="1" Grid.Row="2"
                                       VerticalScrollBarVisibility="Auto"
                                       HorizontalScrollBarVisibility="Disabled">
-                            <StackPanel>
                                 <ItemsControl ItemsSource="{Binding Experiences}" ItemTemplate="{StaticResource ExperienceTemplate}">
                                     <ItemsControl.ItemsPanel>
                                         <ItemsPanelTemplate>
@@ -190,70 +204,70 @@
                                         </ItemsPanelTemplate>
                                     </ItemsControl.ItemsPanel>
                                 </ItemsControl>
-                            </StackPanel>
-                        </ScrollViewer>
-                    </Grid>
-                </Border>
 
-                
-            </Grid>
-        </TabItem>
-        <!--Education-->
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
-                        <Path Data="{StaticResource EducationIconData}" Fill="{DynamicResource WhiteText}" />
-                    </Viewbox>
-                    <TextBlock Text="Education" FontSize="16" Foreground="{DynamicResource WhiteText}" />
-                </StackPanel>
-            </TabItem.Header>
-            <Grid Opacity="0.0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="0"/>
-                </Grid.ColumnDefinitions>
-                <Grid.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
-                    </EventTrigger>
-                </Grid.Triggers>
-                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+
+
+                </Grid>
+            </TabItem>
+            <!--Education-->
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                            <Path Data="{StaticResource EducationIconData}" Fill="{DynamicResource TabHeaderText}" />
+                        </Viewbox>
+                        <TextBlock Text="Education" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Opacity="0.0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
                         Background="{StaticResource PageContentBackground}"
                         CornerRadius="10 10 0 0"
                         Margin="0 0 0 0">
-                    
-                    <!--Education Grid-->
-                    <Grid Margin="0 20 0 0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width=".5*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="20"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        
-                        <!--Education Title-->
-                        <StackPanel Orientation="Vertical"
+
+                        <!--Education Grid-->
+                        <Grid Margin="0 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width=".5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!--Education Title-->
+                            <StackPanel Orientation="Vertical"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Top"
                                     Grid.RowSpan="3">
-                            
-                            <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
-                                <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="-90" />
-                                </TextBlock.LayoutTransform>
+
+                                <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-90" />
+                                    </TextBlock.LayoutTransform>
                                 <Run Text="experience" />
                                 <Run Text="." Foreground="{StaticResource AccentRegular}" />
-                            </TextBlock>
-                        </StackPanel>
-                        <!--Summary title-->
-                        <TextBlock Text="Education Summary"
+                                </TextBlock>
+                            </StackPanel>
+                            <!--Summary title-->
+                            <TextBlock Text="Education Summary"
                                    FontSize="20"
                                    Foreground="{StaticResource WhiteText}"
                                    FontWeight="Regular"
@@ -261,8 +275,8 @@
                                    Grid.Column="1"
                                    TextWrapping="Wrap"
                                    Margin="20 0 0 0"/>
-                        <!--Education Summay-->
-                        <TextBlock Text="{Binding EducationSummaryContent}"
+                            <!--Education Summay-->
+                            <TextBlock Text="{Binding EducationSummaryContent}"
                                    FontSize="16"
                                    Foreground="{StaticResource DefaultText}"
                                    FontWeight="Regular"
@@ -272,106 +286,124 @@
                                    TextWrapping="Wrap"
                                    LineHeight="30"
                                    Margin="20 0 0 0" />
-                        <!--Education Boxes-->
-                        <StackPanel Grid.Row="0"
+                            <!--Education Boxes-->
+                            <StackPanel Grid.Row="0"
                                     Grid.RowSpan="3"
                                     Grid.Column="2">
-                            <ItemsControl ItemTemplate="{StaticResource EducationTemplate}" ItemsSource="{Binding Education}">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Margin="20 0 0 0" />
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                            </ItemsControl>
-                        </StackPanel>
-                    </Grid>
+                                <ItemsControl ItemTemplate="{StaticResource EducationTemplate}" ItemsSource="{Binding Education}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Margin="20 0 0 0" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                            </StackPanel>
+                        </Grid>
 
-                </Border>
-            </Grid>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
-                        <Path Data="{StaticResource PortfolioIconData}" Fill="{DynamicResource WhiteText}" />
-                    </Viewbox>
-                    <TextBlock Text="Portfolio" FontSize="16" Foreground="{DynamicResource WhiteText}" />
-                </StackPanel>
-            </TabItem.Header>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <StackPanel Orientation="Horizontal">
-                    <Viewbox Width="16" Height="16" Margin="0 0 10 0">
-                        <Path Data="{StaticResource InformationData}" Fill="{DynamicResource WhiteText}" />
-                    </Viewbox>
-                    <TextBlock Text="About" FontSize="16" Foreground="{DynamicResource WhiteText}" />
-                </StackPanel>
-            </TabItem.Header>
-            <Grid Opacity="0.0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="0"/>
-                </Grid.ColumnDefinitions>
-                <Grid.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
-                    </EventTrigger>
-                </Grid.Triggers>
-                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                            <Path Data="{StaticResource PortfolioIconData}" Fill="{DynamicResource TabHeaderText}" />
+                        </Viewbox>
+                        <TextBlock Text="Portfolio" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="16" Height="16" Margin="0 0 10 0">
+                            <Path Data="{StaticResource InformationData}" Fill="{DynamicResource TabHeaderText}" />
+                        </Viewbox>
+                        <TextBlock Text="About" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid Opacity="0.0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource SlideUpOnLoad}" />
+                        </EventTrigger>
+                    </Grid.Triggers>
+                    <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"
                         Background="{StaticResource PageContentBackground}"
                         CornerRadius="10 10 0 0"
                         Margin="0 0 0 0">
 
-                    <!--Education Grid-->
-                    <Grid Margin="0 20 0 0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="20"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="20"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
+                        <!--Education Grid-->
+                        <Grid Margin="0 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width=".4*" />
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
 
-                        <!--Education Title-->
-                        <StackPanel Orientation="Vertical"
+                            <!--Education Title-->
+                            <StackPanel Orientation="Vertical"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Top"
                                     Grid.RowSpan="3">
 
-                            <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
-                                <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="-90" />
-                                </TextBlock.LayoutTransform>
+                                <TextBlock FontWeight="Bold" Foreground="{StaticResource WhiteText}" FontSize="48">
+                                    <TextBlock.LayoutTransform>
+                                        <RotateTransform Angle="-90" />
+                                    </TextBlock.LayoutTransform>
                                 <Run Text="about this app" />
                                 <Run Text="." Foreground="{StaticResource AccentRegular}" />
-                            </TextBlock>
-                        </StackPanel>
-                        <!--About Summay-->
-                        <TextBlock Text="{Binding AboutContent}"
+                                </TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Center" >
+                                <Image 
+                                   
+                                   Source="pack://application:,,,/Assets/Images/CVIcon2.png"
+                                   Width="264" Height="264"
+                                   VerticalAlignment="Top"/>
+
+                                <TextBlock Text="Copyright © Lee Denbigh 2023."
+                                           Foreground="{StaticResource WhiteText}"
+                                           Grid.Column="2"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+
+
+                            <!--About Summay-->
+                            <TextBlock Text="{Binding AboutContent}"
                                    FontSize="16"
                                    Foreground="{StaticResource DefaultText}"
                                    FontWeight="Regular"
                                    TextAlignment="Left"
                                    Grid.Row="1"
-                                   Grid.Column="2"
+                                   Grid.Column="3"
                                    TextWrapping="Wrap"
                                    LineHeight="30">
-                            <TextBlock.DataContext>
-                                <vm:AboutViewModel />
-                            </TextBlock.DataContext>
-                        </TextBlock>
-                    </Grid>
+                                <TextBlock.DataContext>
+                                    <vm:AboutViewModel />
+                                </TextBlock.DataContext>
+                            </TextBlock>
 
-                </Border>
-            </Grid>
-        </TabItem>
-    </TabControl>
+
+                        </Grid>
+
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
-    
+
 </Window>
