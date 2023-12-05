@@ -15,8 +15,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         // Property changed event
         public event PropertyChangedEventHandler PropertyChanged;
 
-        
-
+        // Collection to store education items, with property change notification
         private ObservableCollection<Education> _education;
         public ObservableCollection<Education> Education
         {
@@ -28,9 +27,8 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
-        // Summary content
+        // Property for the content of the main summary
         private string _summaryContent;
-        // Summary content property.
         public string SummaryContent
         {
             get => _summaryContent;
@@ -41,13 +39,8 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
-
-        
-
-
-        // Education Summary content
+        // Property for the content of the education summary
         private string _educationSummaryContent;
-        // Education Summary content property
         public string EducationSummaryContent
         {
             get => _educationSummaryContent;
@@ -58,34 +51,38 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
-
-
-        // On Property changed method.
+        // On Property changed method
         public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        // MainWindowViewModel constructor.
+        // Constructor for MainWindowViewModel
         public MainWindowViewModel()
         {
+            // Load education information during initialization
             LoadEducation();
 
+            // Read the main summary content from a text file
             FileService fileService = new FileService();
             SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
-            
+
+            // Read the education summary content from a text file
             EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/education_summary.txt");
         }
 
+        // Method to load education information from a JSON file
         private void LoadEducation()
         {
             _education = new ObservableCollection<Education>();
 
             try
             {
+                // Use the JsonFileService to get a list of education items from a JSON file
                 JsonFileService jsonFileService = new JsonFileService();
                 List<Education> edList = jsonFileService.GetEducationList();
 
+                // Add each education item to the ObservableCollection
                 foreach (var ed in edList)
                 {
                     Education.Add(ed);
@@ -93,9 +90,10 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
             catch (Exception ex)
             {
-
+                // Propagate the exception up the call stack
                 throw;
             }
         }
     }
+
 }

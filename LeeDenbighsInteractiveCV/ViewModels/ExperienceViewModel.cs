@@ -12,6 +12,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 {
     public class ExperienceViewModel : MainWindowViewModel
     {
+        // Collection to store experiences, with property change notification
         private ObservableCollection<Experience> _experiences;
         public ObservableCollection<Experience> Experiences
         {
@@ -23,9 +24,8 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
-        // Experience Summary content
+        // Property for the content of the experience summary
         private string _experienceSummaryContent;
-        // Experience Summary content property
         public string ExperienceSummaryContent
         {
             get => _experienceSummaryContent;
@@ -36,23 +36,29 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
+        // Default constructor
         public ExperienceViewModel()
         {
+            // Load experiences and experience summary content during initialization
             LoadExperiences();
 
+            // Read the experience summary content from a text file
             var fileService = new FileService();
             ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
         }
 
+        // Method to load experiences from a JSON file
         private void LoadExperiences()
         {
             _experiences = new ObservableCollection<Experience>();
 
             try
             {
+                // Use the JsonFileService to get a list of experiences from a JSON file
                 JsonFileService jsonFileService = new JsonFileService();
                 List<Experience> exList = jsonFileService.GetExperienceList();
 
+                // Add each experience to the ObservableCollection
                 foreach (var ed in exList)
                 {
                     Experiences.Add(ed);
@@ -60,9 +66,10 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
             catch (Exception ex)
             {
-
+                // Propagate the exception up the call stack
                 throw;
             }
         }
     }
+
 }

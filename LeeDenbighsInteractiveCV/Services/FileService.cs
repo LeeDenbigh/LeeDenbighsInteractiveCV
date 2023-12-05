@@ -10,26 +10,24 @@ namespace LeeDenbighsInteractiveCV.Services
 {
     public class FileService
     {
+        /// <summary>
+        /// Reads text from a file given its relative path.
+        /// </summary>
+        /// <param name="relativeStringPath">The relative path of the file.</param>
+        /// <returns>The content of the file as a string, or an error message if an exception occurs.</returns>
         public string ReadTextFromFile(string relativeStringPath)
         {
 			try
 			{
-				//var assembly = Assembly.GetExecutingAssembly();
-				//var resourcePath = relativeStringPath.Replace("/", ".");
-				//var fullPath = $"{assembly.GetName().Name}.{resourcePath}";
-
-				//using (Stream stream = assembly.GetManifestResourceStream(fullPath))
-				//	using(StreamReader reader = new StreamReader(stream))
-				//{
-				//	return reader.ReadToEnd();
-				//}
-
-				string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativeStringPath);
-				return File.ReadAllText(filePath);
+                // Combine the base directory of the current application domain with the relative path to get the full file path
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativeStringPath);
+                // Read all text from the file and return it
+                return File.ReadAllText(filePath);
 			}
 			catch (Exception ex)
 			{
-				return $"Error loading file: {ex.Message}";
+                // If an exception occurs during file reading, return an error message
+                return $"Error loading file: {ex.Message}";
 			}
         }
     }

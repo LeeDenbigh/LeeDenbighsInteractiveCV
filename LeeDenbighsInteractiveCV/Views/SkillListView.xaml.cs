@@ -51,22 +51,26 @@ namespace LeeDenbighsInteractiveCV.Views
 
                 Style toolTipStyle = FindResource("ToolTipStyle") as Style;
 
-                if(toolTipStyle != null)
+                if (toolTipStyle != null)
                 {
+                    // Create a custom ToolTip with the specified style and content
                     ToolTip customToolTip = new ToolTip
                     {
                         Style = toolTipStyle,
                         Content = $"My skill level for {skills.Name} is {skills.Level}%"
                     };
 
+                    // Set the custom ToolTip for the ProgressBar
                     progressBar.ToolTip = customToolTip;
                 }
                 else
                 {
+                    // Display a MessageBox if the ToolTipStyle is not found
                     MessageBox.Show("Tooltip not found");
                 }
 
-                
+
+
             }
         }
     }

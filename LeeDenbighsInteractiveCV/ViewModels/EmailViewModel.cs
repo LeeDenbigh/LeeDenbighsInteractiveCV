@@ -11,20 +11,20 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 {
     public class EmailViewModel : SkillsViewModel
     {
-
-
+        // Private fields to store email-related information
         private string emailAddress;
         private string subject;
         private string body;
 
+        // Default constructor initializes default email-related information
         public EmailViewModel()
         {
             emailAddress = "leedenbigh@googlemail.com";
-            subject = "Sent from the Interactive CV";
-            body = "Email Content...";
+            subject = "";
+            body = "";
         }
 
-        // Binding properties.
+        // Binding properties for email-related information with property change notification
         public string EmailAddress
         {
             get => emailAddress;
@@ -55,15 +55,18 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             }
         }
 
+        // Command to open the default email client with pre-filled details
         public ICommand OpenEmailCommand => new RelayCommand(OpenEmail);
 
+        // Method to open the default email client with pre-filled details
         private void OpenEmail()
         {
-            // Emailto
+            // Generate the mailto URL with pre-filled details
             string mailToUrl = $"mailto:{EmailAddress}?subject={Uri.EscapeDataString(Subject)}&body={Uri.EscapeDataString(Body)}";
 
+            // Start the default email client with the pre-filled mailto URL
             Process.Start(new ProcessStartInfo(mailToUrl));
         }
-
     }
+
 }
