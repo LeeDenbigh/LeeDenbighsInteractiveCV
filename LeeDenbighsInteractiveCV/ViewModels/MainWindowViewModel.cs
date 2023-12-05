@@ -15,16 +15,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         // Property changed event
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<Experience> _experiences;
-        public ObservableCollection<Experience> Experiences
-        {
-            get => _experiences;
-            set
-            {
-                _experiences = value;
-                OnPropertyChanged(nameof(Experiences));
-            }
-        }
+        
 
         private ObservableCollection<Education> _education;
         public ObservableCollection<Education> Education
@@ -36,8 +27,6 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 OnPropertyChanged(nameof(Education));
             }
         }
-
-        private readonly XmlFileService _xmlFileService;
 
         // Summary content
         private string _summaryContent;
@@ -53,18 +42,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         }
 
 
-        // Experience Summary content
-        private string _experienceSummaryContent;
-        // Experience Summary content property
-        public string ExperienceSummaryContent
-        {
-            get => _experienceSummaryContent;
-            set
-            {
-                _experienceSummaryContent = value;
-                OnPropertyChanged(nameof(ExperienceSummaryContent));
-            }
-        }
+        
 
 
         // Education Summary content
@@ -91,13 +69,11 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         // MainWindowViewModel constructor.
         public MainWindowViewModel()
         {
-            _xmlFileService = new XmlFileService();
-            LoadExperiences();
             LoadEducation();
 
             FileService fileService = new FileService();
             SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
-            ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
+            
             EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/education_summary.txt");
         }
 
@@ -119,27 +95,6 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             {
 
                 throw;
-            }
-        }
-
-        private void LoadExperiences()
-        {
-            // Call the GetExperiences method of the XmlFileService to retrieve the experiences data.
-            var experienceData = _xmlFileService.GetExperiences();
-
-            // Check if the experiences data is not null and if it contains a list of Experience objects.
-            if (experienceData != null && experienceData.ExperienceList != null)
-            {
-                // If the data is valid, initialize the Experiences ObservableCollection with the data.
-                // This ObservableCollection is used for data binding in the UI, enabling dynamic updates.
-                Experiences = new ObservableCollection<Experience>(experienceData.ExperienceList);
-            }
-            else
-            {
-                // If the data is null or invalid (for example, if the XML file is empty or cannot be read),
-                // initialize the Experiences property as an empty ObservableCollection.
-                // This ensures that the Experiences property is never null, avoiding null reference exceptions.
-                Experiences = new ObservableCollection<Experience>();
             }
         }
     }

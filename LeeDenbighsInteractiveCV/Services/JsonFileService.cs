@@ -35,5 +35,30 @@ namespace LeeDenbighsInteractiveCV.Services
 
             return educationList;
         }
+
+        public List<Experience> GetExperienceList()
+        {
+            List<Experience> experienceList = new List<Experience>();
+
+            try
+            {
+                string filePath = "Assets/Files/experiencedata.json";
+                if (File.Exists(filePath))
+                {
+                    string jsonData = File.ReadAllText(filePath);
+                    var exList = JsonConvert.DeserializeObject<List<Experience>>(jsonData);
+                    if (exList != null)
+                    {
+                        experienceList = exList;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+            return experienceList;
+        }
     }
 }
