@@ -22,7 +22,7 @@ namespace LeeDenbighsInteractiveCV.Services
             try
             {
                 // Define the file path for the education data JSON file
-                string filePath = "Assets/Files/educationlist.json";
+                string filePath = "Assets/Files/education_list.json";
 
                 // Check if the file exists
                 if (File.Exists(filePath))
@@ -62,7 +62,7 @@ namespace LeeDenbighsInteractiveCV.Services
             try
             {
                 // Define the file path for the experience data JSON file
-                string filePath = "Assets/Files/experiencedata.json";
+                string filePath = "Assets/Files/Data/experience_data.json";
 
                 // Check if the file exists
                 if (File.Exists(filePath))

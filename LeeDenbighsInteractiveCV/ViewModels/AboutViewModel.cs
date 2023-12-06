@@ -30,7 +30,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
         public AboutViewModel()
         {
             // Define the file path for the "About" text file
-            var filePath = "Assets/Files/about.txt";
+            var filePath = "Assets/Files/Txt/about_summary.txt";
 
             // Check if the file exists
             if (File.Exists(filePath))

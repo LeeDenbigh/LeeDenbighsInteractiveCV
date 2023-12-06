@@ -44,7 +44,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 
             // Read the experience summary content from a text file
             var fileService = new FileService();
-            ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/experience_summary.txt");
+            ExperienceSummaryContent = fileService.ReadTextFromFile("Assets/Files/Txt/experience_summary.txt");
         }
 
         // Method to load experiences from a JSON file

@@ -35,7 +35,7 @@ namespace LeeDenbighsInteractiveCV.ViewModels
             try
             {
                 // Define the file path for the subject skills JSON file
-                string filePath = "Assets/Files/subject_skills.json";
+                string filePath = "Assets/Files/Data/subject_skills.json";
 
                 // Check if the file exists
                 if (File.Exists(filePath))

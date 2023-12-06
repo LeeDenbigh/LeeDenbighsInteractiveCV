@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -187,7 +187,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Assets\Files\about.txt">
+    <Content Include="Assets\Files\Txt\about_summary.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Assets\Images\CVIcon2.png" />
@@ -215,22 +215,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Assets\Files\education_summary.txt">
+    <Content Include="Assets\Files\Txt\education_summary.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Files\ExperienceData.xml">
+    <Content Include="Assets\Files\Txt\experience_summary.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Files\experience_summary.txt">
+    <Content Include="Assets\Files\Data\subject_skills.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Files\subject_skills.json">
+    <Content Include="Assets\Files\Data\education_list.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Files\educationlist.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Files\experiencedata.json">
+    <Content Include="Assets\Files\Data\experience_data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="LeeDenbighsInteractiveCV_TemporaryKey.pfx" />
@@ -261,7 +258,7 @@
     <Resource Include="Assets\Images\overview.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Files\summary.txt">
+    <Content Include="Assets\Files\Txt\overview_summary.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

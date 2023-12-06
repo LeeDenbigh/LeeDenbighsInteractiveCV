@@ -65,10 +65,10 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 
             // Read the main summary content from a text file
             FileService fileService = new FileService();
-            SummaryContent = fileService.ReadTextFromFile("Assets/Files/summary.txt");
+            SummaryContent = fileService.ReadTextFromFile("Assets/Files/Txt/overview_summary.txt");
 
             // Read the education summary content from a text file
-            EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/education_summary.txt");
+            EducationSummaryContent = fileService.ReadTextFromFile("Assets/Files/Txt/education_summary.txt");
         }
 
         // Method to load education information from a JSON file
