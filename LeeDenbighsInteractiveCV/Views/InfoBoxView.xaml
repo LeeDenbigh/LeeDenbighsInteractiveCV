@@ -78,7 +78,11 @@
                     Content="View PDF Version"
                     Margin="0 0 20 0"
                     HorizontalAlignment="Center"
-                    Command="{Binding ShowPDFWindow}"/>
+                    Command="{Binding OpenPDF}">
+                <Button.DataContext>
+                    <vm:PSDViewModel />
+                </Button.DataContext>
+            </Button>
 
 
             <!--GitHub button-->
