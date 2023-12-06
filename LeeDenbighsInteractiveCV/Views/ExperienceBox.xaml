@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:LeeDenbighsInteractiveCV.ViewModels"
              xmlns:local="clr-namespace:LeeDenbighsInteractiveCV.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -21,10 +22,11 @@
             <!--Title-->
             <Grid Grid.Column="1" Margin="0 0 0 20">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 
                 <!--Title-->
@@ -54,6 +56,12 @@
                            TextWrapping="Wrap"
                            LineHeight="30"
                            VerticalAlignment="Top"/>
+
+                <Button Style="{StaticResource ButtonAccent}" Command="{Binding OpenPDF}" Grid.Row="4" Content="View PDF Version for a More Indepth Description" >
+                    <Button.DataContext>
+                        <vm:PSDViewModel />
+                    </Button.DataContext>
+                </Button>
             </Grid>
 
             
