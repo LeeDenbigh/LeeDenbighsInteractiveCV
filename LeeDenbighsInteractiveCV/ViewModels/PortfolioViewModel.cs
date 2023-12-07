@@ -21,5 +21,11 @@ namespace LeeDenbighsInteractiveCV.ViewModels
                 OnPropertyChanged(nameof(PortfolioItems));
             }
         }
+
+        public PortfolioViewModel()
+        {
+            PortfolioItems = new ObservableCollection<PortfolioItemModel>();
+
+        }
     }
 }
