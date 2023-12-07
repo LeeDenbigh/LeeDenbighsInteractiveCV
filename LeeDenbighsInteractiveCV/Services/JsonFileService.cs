@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,7 +57,7 @@ namespace LeeDenbighsInteractiveCV.Services
         /// <returns>A list of Experience objects.</returns>
         public List<Experience> GetExperienceList()
         {
-            
+
             List<Experience> experienceList = new List<Experience>();
 
             try
@@ -89,6 +90,23 @@ namespace LeeDenbighsInteractiveCV.Services
 
             // Return the list of experience items
             return experienceList;
+        }
+
+        public async Task<string> GetRemoteJsonData()
+        {
+            string url = "https://raw.githubusercontent.com/LeeDenbigh/leedenbigh.github.io/main/assets/img/portfolio.json";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    return await client.GetStringAsync(url);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
         }
     }
 }
