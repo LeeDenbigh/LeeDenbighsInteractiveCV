@@ -1,4 +1,5 @@
 ﻿using LeeDenbighsInteractiveCV.Models;
+using LeeDenbighsInteractiveCV.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,22 +11,28 @@ namespace LeeDenbighsInteractiveCV.ViewModels
 {
     public class PortfolioViewModel : MainWindowViewModel
     {
-        private ObservableCollection<PortfolioItemModel> _portfolioItems = new ObservableCollection<PortfolioItemModel>();
-
-        public ObservableCollection<PortfolioItemModel> PortfolioItems
+        private string _portfolioSummary;
+        public string PortfolioSummary
         {
-            get => _portfolioItems;
+            get => _portfolioSummary;
             set
             {
-                _portfolioItems = value;
-                OnPropertyChanged(nameof(PortfolioItems));
+                _portfolioSummary = value;
+                OnPropertyChanged(nameof(PortfolioSummary));
             }
         }
 
+
+
         public PortfolioViewModel()
         {
-            PortfolioItems = new ObservableCollection<PortfolioItemModel>();
+            GetPortfolioSummary();
+        }
 
+        private void GetPortfolioSummary()
+        {
+            FileService fileService = new FileService();
+            PortfolioSummary = fileService.ReadTextFromFile("Assets/Files/Txt/portfolio_summary.txt");
         }
     }
 }

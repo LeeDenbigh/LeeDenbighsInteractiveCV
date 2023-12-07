@@ -92,21 +92,5 @@ namespace LeeDenbighsInteractiveCV.Services
             return experienceList;
         }
 
-        public async Task<string> GetRemoteJsonData()
-        {
-            string url = "https://raw.githubusercontent.com/LeeDenbigh/leedenbigh.github.io/main/assets/img/portfolio.json";
-
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    return await client.GetStringAsync(url);
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
-        }
     }
 }

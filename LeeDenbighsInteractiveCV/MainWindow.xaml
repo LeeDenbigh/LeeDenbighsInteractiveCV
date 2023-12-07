@@ -318,6 +318,33 @@
                         <TextBlock Text="Portfolio" FontSize="16" Foreground="{DynamicResource TabHeaderText}" />
                     </StackPanel>
                 </TabItem.Header>
+
+                <Grid>
+                    <Grid.DataContext>
+                        <vm:PortfolioViewModel />
+                    </Grid.DataContext>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="16"
+                               LineHeight="25"
+                               FontWeight="Normal"
+                               Padding="10"
+                               Text="{Binding PortfolioSummary}"
+                               TextWrapping="Wrap"
+                               Foreground="{StaticResource DefaultText}"/>
+                    <Button HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ButtonAccent}"
+                            Content="Go to GitHub"
+                            Grid.Row="1"
+                            Command="{Binding GitHubCommand}">
+                        <Button.DataContext>
+                            <vm:GitHubViewModel />
+                        </Button.DataContext>
+                    </Button>
+                </Grid>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
